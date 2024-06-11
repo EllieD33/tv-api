@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Flex, Heading, Text, Image } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import EpisodeSelector from "./EpisodeSelector";
 import EpisodeInfo from "./EpisodeInfo";
 import { fetchAllEpisodes } from "../utils/api";
