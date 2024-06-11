@@ -15,9 +15,14 @@ function EpisodeDisplay() {
     }, []);
 
     return <section className="border">
-        <h2>Episode</h2>
-        <EpisodeSelector />
-        <EpisodeInfo episodeData={episodeData} />
+        <h2>Episodes</h2>
+        {episodeList && episodeData && (
+                <>
+                    <EpisodeSelector episodeList={episodeList} episodeData={episodeData} />
+                    <EpisodeInfo episodeData={episodeData} />
+                </>
+            )}
+            {!episodeList && <p>Loading...</p>}
     </section>
 }
 
