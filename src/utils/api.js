@@ -9,3 +9,7 @@ export const fetchSeries= () => {
 export const fetchAllEpisodes = () => {
     return greysApi.get("/episodes").then(({ data }) => data);
 }
+
+export const fetchCast = () => {
+    return greysApi.get("/cast").then(({ data }) => data);
+}
