@@ -14,19 +14,19 @@ function SeriesInfo() {
         <article>
             <Flex
                 direction="column"
-                p={4}
+                p={2}
                 mx={2}
                 border="2px"
                 borderColor="gray.400"
             >
-                <Heading as="h2" size="xl" p={4}>
+                <Heading as="h2" size="xl" p={2}>
                     About Grey's Anatomy
                 </Heading>
                 <Flex>
                     {seriesData ? (
                         <>
-                            <Flex direction="column" px={4}>
-                                <Text fontSize="lg" py={4}>
+                            <Flex direction="column" px={2}>
+                                <Text fontSize="lg" pb={2}>
                                     {stripHtmlTags(seriesData.summary)}
                                 </Text>
                                 <Text fontSize="md" py={2}>
@@ -41,7 +41,7 @@ function SeriesInfo() {
                                     </Text>
                                     {seriesData.rating.average}
                                 </Text>
-                                <Text fontSize="md" py={2}>
+                                <Text fontSize="md" pt={2}>
                                     <Text as="span" fontWeight="bold">
                                         Running since:
                                     </Text>{" "}
