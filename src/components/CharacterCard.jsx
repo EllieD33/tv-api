@@ -1,8 +1,26 @@
+import {
+    Card,
+    CardBody,
+    CardHeader,
+    Text,
+    Image,
+    Heading,
+} from "@chakra-ui/react";
+
 function CharacterCard() {
-    return <article className="border">
-        <h3>Character name</h3>
-        <p>info</p>
-    </article>
+    return (
+        <Card mx={2} >
+            <CardHeader>
+                <Heading as="h3" fontSize="xl">
+                    Character name
+                </Heading>
+            </CardHeader>
+            <CardBody>
+                <Image />
+                <Text>info</Text>
+            </CardBody>
+        </Card>
+    );
 }
 
-export default CharacterCard
+export default CharacterCard;

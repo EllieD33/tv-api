@@ -43,31 +43,33 @@ function EpisodeDisplay() {
     }, [episodeList, selectedEpisode]);
 
     return (
-        <Flex
-            direction="column"
-            p={4}
-            mx={2}
-            my={4}
-            border="2px"
-            borderColor="gray.400"
-        >
-            <Heading as="h2" size="xl">
-                Episodes
-            </Heading>
-            {episodeList && episodeData && (
-                <>
-                    <EpisodeSelector
-                        episodeList={episodeList}
-                        selectedSeason={selectedSeason}
-                        selectedEpisode={selectedEpisode}
-                        handleSeasonSelection={handleSeasonSelection}
-                        handleEpisodeSelection={handleEpisodeSelection}
-                    />
-                    <EpisodeInfo episodeData={episodeData} />
-                </>
-            )}
-            {!episodeList && <p>Loading...</p>}
-        </Flex>
+        <article>
+            <Flex
+                direction="column"
+                p={4}
+                mx={2}
+                my={4}
+                border="2px"
+                borderColor="gray.400"
+            >
+                <Heading as="h2" size="xl">
+                    Episodes
+                </Heading>
+                {episodeList && episodeData && (
+                    <>
+                        <EpisodeSelector
+                            episodeList={episodeList}
+                            selectedSeason={selectedSeason}
+                            selectedEpisode={selectedEpisode}
+                            handleSeasonSelection={handleSeasonSelection}
+                            handleEpisodeSelection={handleEpisodeSelection}
+                        />
+                        <EpisodeInfo episodeData={episodeData} />
+                    </>
+                )}
+                {!episodeList && <p>Loading...</p>}
+            </Flex>
+        </article>
     );
 }
 
