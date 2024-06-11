@@ -17,7 +17,12 @@ function SeriesInfo() {
             <div className="flex-container">
                 {seriesData ? (
                     <>
-                        <p>{stripHtmlTags(seriesData.summary)}</p>
+                        <div className="flex-container column">
+                            <p>{stripHtmlTags(seriesData.summary)}</p>
+                            <p><strong>Genres:</strong> {seriesData.genres.join(' | ')}</p>
+                            <p><strong>Rating: </strong>{seriesData.rating.average}</p>
+                            <p><strong>Running since:</strong> {seriesData.premiered}</p>
+                        </div>
                         <img
                             src={seriesData.image.medium}
                             alt="Head and shoulders images of Grey's Anatomy characters arranged inside the number 20, celebrating the show's 20th season."
