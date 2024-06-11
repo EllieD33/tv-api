@@ -5,20 +5,51 @@ import { fetchAllEpisodes } from "../utils/api";
 
 
 function EpisodeDisplay() {
-    const [episodeData, setEpisodeData] = useState()
-    const [episodeList, setEpisodeList] = useState()
+    const [episodeData, setEpisodeData] = useState();
+    const [episodeList, setEpisodeList] = useState();
+    const [selectedSeason, setSelectedSeason] = useState();
+    const [selectedEpisode, setSelectedEpisode] = useState();
+
     useEffect(() => {
         fetchAllEpisodes().then((episodeListData) => {
-            setEpisodeList(episodeListData)
-            setEpisodeData(episodeListData[episodeListData.length - 1])
+            setEpisodeList(episodeListData);
+            const lastestEpisode = episodeListData[episodeListData.length - 1]
+            setEpisodeData(lastestEpisode);
+            setSelectedSeason(lastestEpisode.season);
+            setSelectedEpisode(lastestEpisode.number);
         })
     }, []);
+
+    const handleSeasonSelection = (e) => {
+        setSelectedSeason(parseInt(e.target.value));
+        setSelectedEpisode(1);
+    };
+
+    const handleEpisodeSelection = (e) => {
+        setSelectedEpisode(parseInt(e.target.value));
+    };
+
+    useEffect(() => {
+        if (episodeList && selectedSeason && selectedEpisode) {
+            const selectedEpisodeData = episodeList.find(
+                (episode) => episode.season === selectedSeason && episode.number === selectedEpisode
+            );
+            if (selectedEpisodeData) {
+                setEpisodeData(selectedEpisodeData);
+            }
+        }
+    }, [episodeList, selectedSeason, selectedEpisode]);
 
     return <section className="border">
         <h2>Episodes</h2>
         {episodeList && episodeData && (
                 <>
-                    <EpisodeSelector episodeList={episodeList} episodeData={episodeData} />
+                    <EpisodeSelector 
+                        episodeList={episodeList}
+                        selectedSeason={selectedSeason}
+                        selectedEpisode={selectedEpisode}
+                        handleSeasonSelection={handleSeasonSelection}
+                        handleEpisodeSelection={handleEpisodeSelection} />
                     <EpisodeInfo episodeData={episodeData} />
                 </>
             )}
