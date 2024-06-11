@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react"
 import EpisodeSelector from "./EpisodeSelector"
 import EpisodeInfo from "./EpisodeInfo"
+
 
 function EpisodeDisplay() {
     return <section className="border">
