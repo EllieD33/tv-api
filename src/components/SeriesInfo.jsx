@@ -9,10 +9,8 @@ function SeriesInfo() {
         fetchSeries().then((greysData) => setSeriesData(greysData));
     }, []);
 
-    console.log(seriesData);
-
     return (
-        <section className="border flex-container column">
+        <article className="border flex-container column">
             <h2>About Grey's Anatomy</h2>
             <div className="flex-container">
                 {seriesData ? (
@@ -32,7 +30,7 @@ function SeriesInfo() {
                     <p>Loading...</p>
                 )}
             </div>
-        </section>
+        </article>
     );
 }
 
