@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Flex, Heading, Text, Image } from "@chakra-ui/react";
 import { fetchSeries } from "../utils/api";
-import { stripHtmlTags } from "../utils/helpers";
+import { stripHtmlTags, formatDate } from "../utils/helpers";
 
 function SeriesInfo() {
     const [seriesData, setSeriesData] = useState(null);
@@ -45,7 +45,7 @@ function SeriesInfo() {
                                     <Text as="span" fontWeight="bold">
                                         Running since:
                                     </Text>{" "}
-                                    {seriesData.premiered}
+                                    {formatDate(seriesData.premiered)}
                                 </Text>
                             </Flex>
                             <Image

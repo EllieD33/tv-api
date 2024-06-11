@@ -1,5 +1,5 @@
 import { Flex, Heading, Text, Image } from "@chakra-ui/react";
-import { stripHtmlTags } from "../utils/helpers";
+import { stripHtmlTags, formatDate } from "../utils/helpers";
 
 function EpisodeInfo({ episodeData }) {
     return (
@@ -15,7 +15,7 @@ function EpisodeInfo({ episodeData }) {
                         </Text>
                         <Text py={2}>{stripHtmlTags(episodeData.summary)}</Text>
                         <Text>
-                            <Text as="span" fontWeight="bold">Aired:</Text> {episodeData.airdate}
+                            <Text as="span" fontWeight="bold">Aired:</Text> {formatDate(episodeData.airdate)}
                         </Text>
                     </Flex>
                     <Image
