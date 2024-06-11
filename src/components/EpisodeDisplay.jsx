@@ -22,7 +22,7 @@ function EpisodeDisplay() {
 
     const handleSeasonSelection = (e) => {
         setSelectedSeason(parseInt(e.target.value));
-        setSelectedEpisode(1);
+        setSelectedEpisode(null);
     };
 
     const handleEpisodeSelection = (e) => {
@@ -30,7 +30,7 @@ function EpisodeDisplay() {
     };
 
     useEffect(() => {
-        if (episodeList && selectedSeason && selectedEpisode) {
+        if (episodeList && selectedEpisode) {
             const selectedEpisodeData = episodeList.find(
                 (episode) => episode.season === selectedSeason && episode.number === selectedEpisode
             );
@@ -38,7 +38,7 @@ function EpisodeDisplay() {
                 setEpisodeData(selectedEpisodeData);
             }
         }
-    }, [episodeList, selectedSeason, selectedEpisode]);
+    }, [episodeList, selectedEpisode]);
 
     return <section className="border">
         <h2>Episodes</h2>

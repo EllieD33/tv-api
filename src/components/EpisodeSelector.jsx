@@ -22,7 +22,8 @@ function EpisodeSelector({ episodeList, selectedSeason, selectedEpisode, handleS
                 ))
                 }
             </select>
-            <select name="episode-selector" id="episode-selector" value={selectedEpisode} onChange={handleEpisodeSelection}>
+            <select name="episode-selector" id="episode-selector" value={selectedEpisode || ""} onChange={handleEpisodeSelection}>
+            <option value="">Select an episode</option>
             {episodesForSelectedSeason}
             </select>
         </form>
