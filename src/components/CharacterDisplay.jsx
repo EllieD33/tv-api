@@ -32,8 +32,8 @@ function CharacterDisplay() {
                 }
             </Flex>
             <ButtonGroup variant="outline" spacing="80%" mt={4}>
-                <Button colorScheme="teal" leftIcon={<ArrowLeftIcon />} >Prev</Button>
-                <Button colorScheme="teal" rightIcon={<ArrowRightIcon />} >Next</Button>
+                <Button borderColor={theme.colors.custom[700]} leftIcon={<ArrowLeftIcon />} >Prev</Button>
+                <Button borderColor={theme.colors.custom[700]} rightIcon={<ArrowRightIcon />} >Next</Button>
             </ButtonGroup>
         </Flex>
     </section>

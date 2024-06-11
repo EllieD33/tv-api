@@ -17,6 +17,13 @@ const theme = extendTheme({
             dark: "#29284E",
         },
     },
+    styles: {
+        global: {
+            body: {
+                color: "custom.900",
+            },
+        },
+    },
 });
 
 export default theme;

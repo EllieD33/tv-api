@@ -1,12 +1,14 @@
 import { Flex, Heading, Text, Image } from "@chakra-ui/react";
 import { stripHtmlTags, formatDate } from "../utils/helpers";
+import { useTheme } from "@emotion/react";
 
 function EpisodeInfo({ episodeData }) {
+    const theme = useTheme()
     return (
         <article >
             {episodeData ? (
                 <Flex direction="row" p={2} mt={2} border="2px"
-                borderColor="gray.200">
+                borderColor={theme.colors.custom[200]}>
                     <Flex direction="column" >
                         <Heading as="h3" fontSize="xl" >{episodeData.name}</Heading>
                         <Text>
