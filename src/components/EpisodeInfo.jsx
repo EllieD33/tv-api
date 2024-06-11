@@ -18,7 +18,7 @@ function EpisodeInfo({ episodeData }) {
                     </div>
                     <img
                         src={episodeData.image.medium}
-                        alt="Image depiction relating to displayed episode"
+                        alt={`Still from episode ${episodeData.number} of season ${episodeData.season}`}
                     />
                 </>
             ) : (
