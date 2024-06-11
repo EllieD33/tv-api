@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Flex, Heading, Text, Image } from "@chakra-ui/react";
+import { useTheme } from "@chakra-ui/react";
 import { fetchSeries } from "../utils/api";
 import { stripHtmlTags, formatDate } from "../utils/helpers";
 
@@ -10,6 +11,8 @@ function SeriesInfo() {
         fetchSeries().then((greysData) => setSeriesData(greysData));
     }, []);
 
+    const theme = useTheme()
+
     return (
         <article>
             <Flex
@@ -17,7 +20,7 @@ function SeriesInfo() {
                 p={2}
                 mx={2}
                 border="2px"
-                borderColor="gray.400"
+                borderColor={theme.colors.custom.dark }
             >
                 <Heading as="h2" size="xl" p={2}>
                     About Grey's Anatomy

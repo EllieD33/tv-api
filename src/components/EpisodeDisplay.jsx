@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, useTab } from "@chakra-ui/react";
+import { theme } from "@chakra-ui/react";
 import EpisodeSelector from "./EpisodeSelector";
 import EpisodeInfo from "./EpisodeInfo";
 import { fetchAllEpisodes } from "../utils/api";
+import { useTheme } from "@emotion/react";
 
 function EpisodeDisplay() {
     const [episodeData, setEpisodeData] = useState();
@@ -19,6 +21,8 @@ function EpisodeDisplay() {
             setSelectedEpisode(lastestEpisode.number);
         });
     }, []);
+
+    const theme = useTheme()
 
     const handleSeasonSelection = (e) => {
         setSelectedSeason(parseInt(e.target.value));
@@ -50,7 +54,7 @@ function EpisodeDisplay() {
                 mx={2}
                 my={4}
                 border="2px"
-                borderColor="gray.400"
+                borderColor={theme.colors.custom.dark}
             >
                 <Heading as="h2" size="xl">
                     Episodes
